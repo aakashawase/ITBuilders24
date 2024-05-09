@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avengers-deployment
+  labels:
+    app: avengers
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: avengers
+  template:
+    metadata:
+      labels:
+        app: avengers
+    spec:
+      containers:
+      - name: avengers
+        image: akashawasedevops/itbuilders2024:v1  # Use v1 tag
+        ports:
+        - containerPort: 80
